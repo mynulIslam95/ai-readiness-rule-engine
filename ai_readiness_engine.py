@@ -17,13 +17,52 @@ print("=== Generative AI & Agentic AI Access Decision Engine ===")
 name = input("Enter your name: ")
 
 python_skill = int(input("Python skill (1-10): "))
-api_skill = int(input("API knowledge (1-10): "))
-prompt_skill = int(input("Prompt engineering skill (1-10): "))
-ml_basics = input("Do you understand ML basics? (yes/no): ").lower()
-projects = input("Have you built any coding projects? (yes/no): ").lower()
-math_interest = input("Interested in AI math concepts? (yes/no): ").lower()
+if python_skill < 1 or python_skill > 10:
+    print("Rule: Python skill must be a number between 1 and 10.")
+    python_skill = int(input("Please enter Python skill again (1-10): "))
+    if python_skill < 1 or python_skill > 10:
+        print("Before learning AI, please improve your reading skill first, then try again.")
+        exit()
 
-# Decision logic using conditional statements
+api_skill = int(input("API knowledge (1-10): "))
+if api_skill < 1 or api_skill > 10:
+    print("Rule: API knowledge must be a number between 1 and 10.")
+    api_skill = int(input("Please enter API knowledge again (1-10): "))
+    if api_skill < 1 or api_skill > 10:
+        print("Before learning AI, please improve your reading skill first, then try again.")
+        exit()
+
+prompt_skill = int(input("Prompt engineering skill (1-10): "))
+if prompt_skill < 1 or prompt_skill > 10:
+    print("Rule: Prompt engineering skill must be a number between 1 and 10.")
+    prompt_skill = int(input("Please enter Prompt engineering skill again (1-10): "))
+    if prompt_skill < 1 or prompt_skill > 10:
+        print("Before learning AI, please improve your reading skill first, then try again.")
+        exit()
+
+ml_basics = input("Do you understand ML basics? (yes/no): ").lower()
+if ml_basics != "yes" and ml_basics != "no":
+    print("Rule: Please answer only yes or no.")
+    ml_basics = input("Please enter ML basics again (yes/no): ").lower()
+    if ml_basics != "yes" and ml_basics != "no":
+        print("Before learning AI, please improve your reading skill first, then try again.")
+        exit()
+
+projects = input("Have you built any coding projects? (yes/no): ").lower()
+if projects != "yes" and projects != "no":
+    print("Rule: Please answer only yes or no.")
+    projects = input("Please enter coding projects again (yes/no): ").lower()
+    if projects != "yes" and projects != "no":
+        print("Before learning AI, please improve your reading skill first, then try again.")
+        exit()
+
+math_interest = input("Interested in AI math concepts? (yes/no): ").lower()
+if math_interest != "yes" and math_interest != "no":
+    print("Rule: Please answer only yes or no.")
+    math_interest = input("Please enter AI math interest again (yes/no): ").lower()
+    if math_interest != "yes" and math_interest != "no":
+        print("Before learning AI, please improve your reading skill first, then try again.")
+        exit()
 
 if python_skill >= 8 and api_skill >= 7 and prompt_skill >= 7 and ml_basics == "yes" and projects == "yes":
     level = "Agentic AI Ready"
@@ -41,7 +80,6 @@ else:
     level = "Beginner Level"
     message = "Focus on Python fundamentals, coding practice and understanding AI basics first."
 
-# Nested condition example
 if level == "Agentic AI Ready":
     if math_interest == "yes":
         recommendation = "Recommended: Start building multi-agent systems, LLM orchestration and advanced AI workflows."
