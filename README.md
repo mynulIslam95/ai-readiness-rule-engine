@@ -8,3 +8,8 @@ Conditional statements (`if`, `elif`, `else`), nested conditions, logical operat
 ### Run
 ```bash
 python ai_readiness_engine.py
+```
+
+## Example Output
+
+![Program Output](images/output-demo.png)
